@@ -1,7 +1,7 @@
 
-## Ploy-board-game
+## Ploy-Board-Game
 
-Ploy-board-game is a Haskell implementation of the board game [Ploy](https://en.wikipedia.org/wiki/Ploy_(board_game)). This project includes both a Haskell-based game logic and a Python web server for interacting with the game through a web interface.
+Ploy-Board-Game is a Haskell implementation of the board game [Ploy](https://en.wikipedia.org/wiki/Ploy_(board_game)). This project includes both a Haskell-based game logic and a Python web server for interacting with the game through a web interface.
 
 ### Table of Contents
 
@@ -21,15 +21,15 @@ Ploy is a strategic board game, and this project aims to provide a Haskell imple
 
 ### Installation
 
-To set up Ploy-board-game on your local machine, follow these steps:
+To set up Ploy-Board-Game on your local machine, follow these steps:
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/antonhtmnn/Ploy-board-game.git
+    git clone https://github.com/antonhtmnn/Ploy-Board-Game.git
     ```
 2. Navigate to the project directory:
     ```bash
-    cd Ploy-board-game
+    cd Ploy-Board-Game
     ```
 3. Set up the Haskell environment:
     ```bash
@@ -106,7 +106,7 @@ To build the project, use the following commands:
 The project is structured as follows:
 
 ```
-Ploy-board-game/
+Ploy-Board-Game/
 ├── ploy-webserver/
 │   ├── README.md
 │   ├── css/
