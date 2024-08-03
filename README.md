@@ -107,8 +107,6 @@ The project is structured as follows:
 
 ```
 Ploy-board-game/
-├── LICENSE
-├── README.md
 ├── ploy-webserver/
 │   ├── README.md
 │   ├── css/
@@ -140,6 +138,8 @@ Ploy-board-game/
 │   │   └── Spec.hs
 │   └── validate/
 │       └── Spec.hs
+├── LICENSE
+└── README.md
 ```
 
 ### Contributing
