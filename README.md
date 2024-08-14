@@ -12,8 +12,6 @@ Ploy-Board-Game is a Haskell implementation of the board game [Ploy](https://en.
 - [Test Commands](#test-commands)
 - [Building Commands](#building-commands)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
 
 ### Project Description
 
@@ -141,11 +139,3 @@ Ploy-Board-Game/
 ├── LICENSE
 └── README.md
 ```
-
-### Contributing
-
-Contributions are welcome! Please fork the repository and create a pull request with your changes. Ensure you follow the coding conventions and include appropriate tests.
-
-### License
-
-This project is licensed under the MIT License.
