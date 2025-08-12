@@ -1,21 +1,72 @@
-
 ## Ploy-Board-Game
 
 Ploy-Board-Game is a Haskell implementation of the board game [Ploy](https://en.wikipedia.org/wiki/Ploy_(board_game)). This project includes both a Haskell-based game logic and a Python web server for interacting with the game through a web interface.
 
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=Q9Dr3bevVh4" title="YouTube Video">
+    <img src="https://img.youtube.com/vi/Q9Dr3bevVh4/maxresdefault.jpg" alt="Demo video thumbnail" width="640" />
+  </a>
+  <br/>
+  <sub>▶ click image to watch demo video</sub>
+</p>
+
 ### Table of Contents
 
 - [Project Description](#project-description)
+- [Game Rules](#game-rules)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Game Modes](#game-modes)
 - [Test Commands](#test-commands)
 - [Building Commands](#building-commands)
-- [Project Structure](#project-structure)
 
 ### Project Description
 
-Ploy is a strategic board game, and this project aims to provide a Haskell implementation of it. The game can be played through a web interface provided by a Python web server.
+Ploy is a strategic, chess-like board game. Each side controls pieces with different allowed movement directions and ranges. This repository contains:
+- a **Haskell** implementation of the game logic (validation, rules), and
+- a **Python** web server that provides a simple web UI to play the game.
+
+---
+
+### Game Rules
+
+**Board & Start**
+- Board size: **9×9**.
+- **Black** moves first.
+- Each side starts with **15** pieces. Pieces show **direction lines** (strokes) that indicate along which directions they may move.
+
+**Turn**
+- On your turn you must perform a **move and/or a rotation** that **changes the position or orientation** (no null moves).
+
+**Movement**
+- A piece moves **horizontally, vertically, or diagonally** strictly **along its printed direction lines**.
+- Pieces **cannot jump** over other pieces.
+- The destination square must be **empty** or contain an **opponent piece**; in the latter case the opponent piece is **captured** and removed.
+
+**Rotation**
+- A rotation changes the **orientation** of a piece’s direction lines (to the next valid orientation for that piece type).
+
+**Piece types & per-turn allowance**
+
+| Piece       | Allowed action per turn |
+|-------------|--------------------------|
+| **Shield**    | Up to **1 square** **and/or** **rotation** (rotation may be in addition to the move). |
+| **Probe**     | **Either** up to **2 squares** **or** **rotation**. |
+| **Lance**     | **Either** up to **3 squares** **or** **rotation**. |
+| **Commander** | **Either** up to **1 square** **or** **rotation**. |
+
+> Movement must always follow the piece’s direction lines; no jumping.
+
+<!-- Optional: include a legend image of the piece variants/orientations -->
+<!--
+![Piece Legend](docs/assets/ploy_piece_legend.png)
+-->
+
+**Win condition**
+- Capture the opponent’s **Commander**, **or**
+- capture **all other** opponent pieces.
+
+---
 
 ### Installation
 
@@ -25,9 +76,9 @@ To set up Ploy-Board-Game on your local machine, follow these steps:
     ```bash
     git clone https://github.com/antonhtmnn/Ploy-Board-Game.git
     ```
-2. Navigate to the project directory:
+2. Navigate to the `ploy` directory:
     ```bash
-    cd Ploy-Board-Game
+    cd Ploy-Board-Game/ploy
     ```
 3. Set up the Haskell environment:
     ```bash
@@ -98,44 +149,3 @@ To build the project, use the following commands:
     ```bash
     stack clean
     ```
-
-### Project Structure
-
-The project is structured as follows:
-
-```
-Ploy-Board-Game/
-├── ploy-webserver/
-│   ├── README.md
-│   ├── css/
-│   │   ├── chessboard-0.3.0.css
-│   │   ├── chessboard-0.3.0.min.css
-│   │   ├── chessboard.css
-│   │   ├── normalize-2.1.2.min.css
-│   │   └── site2.css
-│   ├── img/
-│   │   └── background.png
-│   ├── index.html
-│   ├── js/
-│   │   ├── jquery-1.10.1.min.js
-│   │   ├── json3.min.js
-│   │   ├── ployboard.js
-│   │   └── prettify.js
-│   ├── ploy.html
-│   └── ploy.py
-├── ploy/
-│   ├── README.md
-│   ├── app/
-│   │   └── Main.hs
-│   ├── package.yaml
-│   ├── src/
-│   │   ├── Board.hs
-│   │   └── Ploy.hs
-│   ├── stack.yaml
-│   ├── test/
-│   │   └── Spec.hs
-│   └── validate/
-│       └── Spec.hs
-├── LICENSE
-└── README.md
-```
